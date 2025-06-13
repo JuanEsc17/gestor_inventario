@@ -8,15 +8,32 @@
     <div class="col-md-3"><input name="nombre" class="form-control" placeholder="Nombre" required></div>
     <div class="col-md-2">
         <select name="categoria" class="form-select">
-            <option>Artesanía</option>
-            <option>Decoración</option>
-            <option>Papelería</option>
+            <option>Verdulería</option>
+            <option>Carniceria</option>
+            <option>Almacen</option>
             <option>Otro</option>
         </select>
     </div>
     <div class="col-md-2"><input type="number" name="stock" class="form-control" placeholder="Stock" required></div>
     <div class="col-md-2"><input type="number" step="0.01" name="precio" class="form-control" placeholder="Precio" required></div>
     <div class="col-md-3"><button class="btn btn-primary w-100">Agregar producto</button></div>
+</form>
+
+<form action="/editar" method="post" class="row g-3 mb-4">
+    <div class="col-md-3"><input name="id" class="form-control" placeholder="ID del producto a editar" required></div>
+    <div class="col-md-3"><input name="nombre" class="form-control" placeholder="Nuevo nombre"></div>
+    <div class="col-md-2">
+        <select name="categoria" class="form-select">
+            <option value="">Sin cambio</option>
+            <option>Verdulería</option>
+            <option>Carniceria</option>
+            <option>Almacen</option>
+            <option>Otro</option>
+        </select>
+    </div>
+    <div class="col-md-2"><input type="number" name="stock" class="form-control" placeholder="Nuevo stock"></div>
+    <div class="col-md-2"><input type="number" step="0.01" name="precio" class="form-control" placeholder="Nuevo precio"></div>
+    <div class="col-md-3"><button class="btn btn-warning w-100">Editar producto</button></div>
 </form>
 
 <form action="/eliminar" method="post" class="row g-3 mb-4">
@@ -29,10 +46,22 @@
     <div class="col-md-3"><button class="btn btn-secondary w-100">Buscar producto</button></div>
 </form>
 
+<form action="/filtrar" method="get" class="row g-3 mb-4">
+    <div class="col-md-3">
+        <select name="categoria" class="form-select">
+            <option value="">Todas las categorías</option>
+            <option>Verdulería</option>
+            <option>Carniceria</option>
+            <option>Almacen</option>
+            <option>Otro</option>
+        </select>
+    </div>
+    <div class="col-md-3"><button class="btn btn-info w-100">Filtrar por categoría</button></div>
+
 <table class="table table-striped">
     <thead>
         <tr>
-            <th>ID</th><th>Nombre</th><th>Categoría</th><th>Stock</th><th>Precio</th>
+            <th>ID</th><th>Nombre</th><th>Categoría</th><th>Stock</th><th>Precio|Precio por kilo</th>
         </tr>
     </thead>
     <tbody>

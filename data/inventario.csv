@@ -1,4 +1,5 @@
 id,nombre,categoria,stock,precio
-2,sbdsbad,Artesanía,23,21123.0
-3,nasfjbajb,Artesanía,23123,222.0
-4,adsjadsjas,Artesanía,231,21323.0
+1,salame,Verdulería,10,3.0
+2,Collar,Carniceria,15,22.0
+3,Vacio,Carniceria,50,16000.0
+5,Mani,Almacen,500,1000.0

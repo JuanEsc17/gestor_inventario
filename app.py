@@ -52,5 +52,36 @@ def buscar():
     resultados = productos[productos['nombre'].str.lower().str.contains(termino)]
     return render_template('index.html', productos=resultados)
 
+@app.route('/filtrar', methods=['GET'])
+def filtrar():
+    # Carga los productos actuales
+    productos = cargar_datos()
+    # Obtiene la categoría del formulario
+    categoria = request.args.get('categoria', '')
+    # Filtra los productos por categoría
+    if categoria:
+        resultados = productos[productos['categoria'] == categoria]
+    else:
+        resultados = productos
+    return render_template('index.html', productos=resultados)
+
+@app.route('/editar', methods=['POST'])
+def editar_post():
+    productos = cargar_datos()
+    id_producto = int(request.form['id'])
+    # Busca el producto por ID
+    idx = productos[productos['id'] == id_producto].index
+    if not idx.empty:
+        if request.form['nombre']:
+            productos.at[idx[0], 'nombre'] = request.form['nombre']
+        if request.form['categoria']:
+            productos.at[idx[0], 'categoria'] = request.form['categoria']
+        if request.form['stock']:
+            productos.at[idx[0], 'stock'] = int(request.form['stock'])
+        if request.form['precio']:
+            productos.at[idx[0], 'precio'] = float(request.form['precio'])
+        guardar_datos(productos)
+    return redirect('/')
+
 if __name__ == '__main__':
     app.run(debug=True)
