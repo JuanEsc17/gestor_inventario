@@ -26,7 +26,7 @@ Está pensada para pequeños emprendimientos que necesiten una herramienta simpl
 ## 📂 Estructura del proyecto
 
 ```bash
-inventario-flask/
+gestor-inventario/
 ├── app.py # Lógica principal de la app
 ├── data/
 │ └── inventario.csv # Archivo de productos
@@ -48,8 +48,8 @@ inventario-flask/
 1. Cloná este repositorio:
 
 ```bash
-git clone https://github.com/TU_USUARIO/inventario-flask.git
-cd inventario-flask
+git clone https://github.com/JuanEsc17/inventario-flask.git
+cd gestor-inventario
 ```
 
 2. Instalá las dependencias:
