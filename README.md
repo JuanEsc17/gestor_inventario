@@ -25,6 +25,7 @@ Está pensada para pequeños emprendimientos que necesiten una herramienta simpl
 
 ## 📂 Estructura del proyecto
 
+```bash
 inventario-flask/
 ├── app.py # Lógica principal de la app
 ├── data/
@@ -38,7 +39,7 @@ inventario-flask/
 │ └── style.css # Estilos personalizados (opcional)
 ├── requirements.txt # Dependencias del proyecto
 └── README.md
-
+```
 
 ---
 
